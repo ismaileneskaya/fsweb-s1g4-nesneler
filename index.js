@@ -15,8 +15,16 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(isima, fiyata, kategoria){
+	const newmenu = {
+		isim:isima,
+		fiyat:fiyata,
+		kategori:kategoria,
+	}
+	const newmenu2= {}
+	newmenu.isim=isima,
+	newmenu2["fiyat"]=fiyata;
+	return newmenu;
 }
 
 
@@ -51,7 +59,16 @@ const burger = {
 	fiyat: 18, 
 	kategori: "Öğle Yemeği", 
 
+indirim: function (meslek) {
+	if (meslek =="öğretmen"  || meslek =="öğrenci") {
+		return this.fiyat*0.75;
+	    } else { (meslek == "diğer")
+	        return this.fiyat*0.9;
+	    }
+	}
 }
+
+
 
 
 
@@ -71,7 +88,12 @@ const degerlendirmeler = [
 	Yukarıdaki degerlendirmeler dizisini(array) kullanarak:
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
+for(let i=0 ;i>degerlendirmeler.length; i++){
+	if(degerlendirmeler[i].isim=="Ahmet"){
 
+console.log(degerlendirmeler[i].geribildirim)
+	}
+}
 
 
 /*  Görev 4 (ototest yok):  
@@ -117,9 +139,11 @@ console.log(DegerlendirmeEkle(degerlendirmeler, 'Hurşut' , 2, 'Boktan yemekler!
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
-	/*Kodlar buraya*/
-
+function AnahtardanDegerlendirmeAl(dizi, index) 
+{
+	const yorum = dizi[index];
+	const metin ='${yorum.isim} isimli kişi ${yorum.puan} puan verdi ve şunları yazdı: ${geribildirim}'
+    return metin;
 }
 
 

@@ -94,11 +94,16 @@ const degerlendirmeler = [
 */
 
 
-function DegerlendirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
-	
+function DegerlendirmeEkle(dizi,isim,puan,geribildirim){
+	const yorum = {
+		isim:isim,
+		pusn:puan,
+		geribildirim:geribildirim,
+	}
+	dizi.push(yorum)
+	return dizi
 }
-
+console.log(DegerlendirmeEkle(degerlendirmeler, 'Hurşut' , 2, 'Boktan yemekler!'))
 
 
 /*  Görev 6: 
